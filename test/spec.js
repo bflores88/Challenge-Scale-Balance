@@ -16,6 +16,14 @@ describe('Scale Balance', function(){
     scaleBalance(["[5, 9]", "[1, 2, 6, 7]"]).should.be.a('string')
   })
 
+  it('should be able to add two weights to one side - check left', function(){
+    scaleBalance(["[5, 9]", "[0, 1, 3, 6]"]).should.equal('1,3')
+  })
+
+  it('should be able to add two weights to one side - check right', function(){
+    scaleBalance(["[9, 5]", "[0, 1, 3, 6]"]).should.equal('1,3')
+  })
+
   it('should return a unique solution', function(){
     scaleBalance(["[5, 9]", "[1, 2, 6, 7]"]).should.equal('2,6')
   })
@@ -23,6 +31,5 @@ describe('Scale Balance', function(){
   it('should return not possible if no solution is found', function(){
     scaleBalance(["[5, 9]", "[0, 3, 6]"]).should.equal('not possible')
   })
-
 
 });
