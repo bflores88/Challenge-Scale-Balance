@@ -12,7 +12,20 @@ function scaleBalance(strArr) {
     return addedWeights.toString();
   }
 
-  //add two weighs to one side
+  //add one weight to one side
+  for (let x = 0; x < weights.length; x++) {
+    let singleWeight = weights[x];
+
+    if (left + singleWeight === currentScale[1]) {
+      return singleWeight.toString();
+    }
+
+    if (right + singleWeight === currentScale[0]) {
+      return singleWeight.toString();
+    }
+  }
+
+  //add two weights to one side
   for (let a = 0; a < currentScale.length; a++) {
     let oneSide = currentScale[a];
 

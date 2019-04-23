@@ -16,6 +16,14 @@ describe('Scale Balance', function(){
     scaleBalance(["[5, 9]", "[1, 2, 6, 7]"]).should.be.a('string')
   })
 
+  it('should check a single weight on either side - check left', function(){
+    scaleBalance(["[5, 6]", "[1, 3, 5, 6]"]).should.equal('1')
+  })
+
+  it('should check a single weight on either side - check right', function(){
+    scaleBalance(["[6, 5]", "[1, 3, 5, 6]"]).should.equal('1')
+  })
+
   it('should be able to add two weights to one side - check left', function(){
     scaleBalance(["[5, 9]", "[0, 1, 3, 6]"]).should.equal('1,3')
   })
